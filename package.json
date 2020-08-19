@@ -1,0 +1,18 @@
+{
+  "name": "skynotes",
+  "version": "1.0.0",
+  "description": "Application to create edit and manage notes",
+  "private":true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kunal Patrikar",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "skynet-js": "^0.1.0"
+  }
+}

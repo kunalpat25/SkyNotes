@@ -42,9 +42,10 @@ window.onload = function(){
     try {
         (async () => {
             const { skylink } = await client.uploadDirectory(noteFolder, "noteFolder");
-            let directLink = "/"+skylink+"/";
-            document.getElementById("noteLink").href=directLink;
-            document.getElementById("noteLink").text=skyLink;
+            // let directLink = "/"+skylink+"/";
+            document.getElementById("noteLink").href="Skylink : " + skylink;
+            document.getElementById("noteLink").text= "https://siasky.net/" + skylink;
+            console.log(`Upload successful, skylink: ${skylink}`);
         })();
     } catch (error) {
         alert(error);

@@ -72,10 +72,19 @@ window.saveNote = function(title,note)
         </script>
         
         <center>
-        <h2>Your Note</h2>
-        Title:<p id="titlePara"></p>
+        <div style="background-color: aquamarine; padding-top:10px; padding-bottom: 10px;">
+    <h1>Sky Notes</h1>
+    <h2>Create | View | Share</h2>
+</div>
+</center>
+<hr> <br> <br>  
+        <center>
+        <div style="width: 700px;">
+        <h2>Your Note</h2> <br>
+        <span style="font-size: 150%;" >Title :</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 140%;" id="titlePara"></span>
         <br><br>
-        Note:<p id="notePara"></p>
+        <span style="font-size: 150%;">Note :</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 140%;" id="notePara"></span>
+        </div>
         </center>
         </body>
     </html>
@@ -97,7 +106,7 @@ window.saveNote = function(title,note)
             const { skylink } = await client.uploadDirectory(noteFolder, "noteFolder");
             let directLink = "/"+skylink+"/";
             document.getElementById("noteLink").href=directLink;
-            document.getElementById("noteLink").text= skylink;
+            document.getElementById("noteLink").text= "Share or copy this note's link";
             console.log(`Upload successful, skylink: ${skylink}`);
         })();
     } catch (error) {

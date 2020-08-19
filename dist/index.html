@@ -6,21 +6,81 @@
     <link rel="stylesheet" href="style.css">
     <title>Sky Notes</title>
 </head>
+<style>
+    .shadow {
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+.main-div
+{
+    display: inline-block;
+    width: 450px;
+    height: 300px;
+    padding: 20px;
+}
+.label
+{
+    font-size: 20px;
+    font-style: bold;
+    
+}
+.button {
+  transition-duration: 0.4s;
+  font-size: large;
+  padding: 3px;
+}
+
+.button:hover {
+  background-color: aquamarine; /* Green */
+  color: black;
+}
+input
+{
+    width: 315px;
+    font-size: 18px; 
+}
+textarea {
+     font-size: 18px; 
+}
+</style>
 <body>
+  
     <script src="main.js"></script>
     <center>
-    <h1>Welcome to Sky Notes</h1>
-    <h2>Create | Edit | Share</h2>
+        <div style="background-color: aquamarine; padding-top:10px; padding-bottom: 10px;">
+    <h1>Sky Notes</h1>
+    <h2>Create | View | Share</h2>
+</div>
 </center>
-    <hr> <br>
+    <hr> <br> <br>
 
     <center>
-    <div>
-        Title: <input type="text" name="title" id="title"><br>
-        Note : <input type="text" name="note" id="note"><br><br>
-        <button onclick="saveNote(document.getElementById('title').value,document.getElementById('note').value)">Save Note</button>
+    <div class="shadow main-div" >
+        <center>
+        <table style="row-gap: 10px;">
+            <tr>
+                <td><span class="label">Title</span></td>
+                <td><input  type="text" id="title" placeholder="" name="title"></td>
+            </tr>
+            <tr></tr>
+            
+            <tr>
+                <td><span class="label">Note</span></td>
+                <td><textarea name="note" id="note" cols="30" rows="10" placeholder="Type your note"> </textarea></td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td><button class="button" onclick="saveNote(document.getElementById('title').value,document.getElementById('note').value)">Create Note</button></td>            
+            </tr>
+        </table>
+    </center>
     </div>
-    <a id="noteLink" href=""></a>
 </center>
+    <br><br>
+    <center>
+    <a id="noteLink" href="" style="color: darkblue; font-size: large;"></a>
+    </center>
 </body>
 </html>
